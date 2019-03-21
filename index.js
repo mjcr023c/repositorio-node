@@ -1,15 +1,22 @@
 const { cursos, listarCursos, opcionesInscripcion, inscribirCurso } = require('./datos');
+const express = require('express')
+const app = express()
 
 
-const argv = require('yargs')
-    .command('inscribir', 'Inscribirme en un curso', opcionesInscripcion)
-    .argv
+let output = '';
 
-if (argv.i != undefined) {
-    let idCurso = argv.i;
-    let nombre = argv.n;
-    let cedula = argv.c;
-    inscribirCurso(idCurso, nombre, cedula);
-} else {
-    listarCursos(2000);
-}
+app.get('/', function(req, res) {
+    output = listarCursos(2000);
+    res.send(output);
+})
+
+app.get('/inscribir/:i/:n/:c', function(req, res) {
+    console.log(req.params);
+    let idCurso = req.params.i;
+    let nombre = req.params.n;
+    let cedula = req.params.c;
+    output = inscribirCurso(idCurso, nombre, cedula);
+    res.send(output);
+})
+
+app.listen(3000)

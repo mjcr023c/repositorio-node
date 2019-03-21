@@ -1,0 +1,13 @@
+El Estudiante nombtr.
+Con cedula 132.
+Se ha matriculado en el curso con id igual a 1, el nombre del curso es Diseño de Bases de Datos,
+tiene una duración de 16 horas y 
+un valor de 15 USD.
+
+El Estudiante nombre.
+Con cedula 123.
+Se ha matriculado en el curso con id igual a 1, el nombre del curso es Diseño de Bases de Datos,
+tiene una duración de 16 horas y 
+un valor de 15 USD.
+
+El Estudiante nombre.<br>Con cedula 123.<br>Se ha matriculado en el curso con id igual a 1, el nombre del curso es Diseño de Bases de Datos,<br>tiene una duración de 16 horas y <br>un valor de 15 USD.<br><br>El Estudiante nombre.<br>Con cedula 123.<br>Se ha matriculado en el curso con id igual a 1, el nombre del curso es Diseño de Bases de Datos,<br>tiene una duración de 16 horas y <br>un valor de 15 USD.<br><br>El Estudiante nombre.<br>Con cedula 123.<br>Se ha matriculado en el curso con id igual a 1, el nombre del curso es Diseño de Bases de Datos,<br>tiene una duración de 16 horas y <br>un valor de 15 USD.<br><br>El Estudiante nombre.<br>Con cedula 123.<br>Se ha matriculado en el curso con id igual a 1, el nombre del curso es Diseño de Bases de Datos,<br>tiene una duración de 16 horas y <br>un valor de 15 USD.<br><br>El Estudiante nombre.<br>Con cedula 123.<br>Se ha matriculado en el curso con id igual a 1, el nombre del curso es Diseño de Bases de Datos,<br>tiene una duración de 16 horas y <br>un valor de 15 USD.<br><br>El Estudiante nombre.<br>Con cedula 123.<br>Se ha matriculado en el curso con id igual a 1, el nombre del curso es Diseño de Bases de Datos,<br>tiene una duración de 16 horas y <br>un valor de 15 USD.<br><br>El Estudiante 123.<br>Con cedula hola.<br>Se ha matriculado en el curso con id igual a 1, el nombre del curso es Diseño de Bases de Datos,<br>tiene una duración de 16 horas y <br>un valor de 15 USD.<br><br>

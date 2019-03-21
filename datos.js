@@ -35,36 +35,40 @@ let opcionesInscripcion = {
     }
 }
 
+let texto = '';
+
 let obtenerCurso = (idCurso) => (cursos.find(curso => curso.id == idCurso));
 
 let listarCursos = (timmer) => {
     let offset = 0;
     cursos.forEach(function(curso) {
-        setTimeout(function() {
-            console.log('El id del curso es ' + curso.id + ', el nombre del curso es ' + curso.nombre +
-                ',\n' + 'tiene una duración de ' + curso.duracion + ' horas y ' +
-                '\n' + 'un valor de ' + curso.valor + ' USD.\n\n');
-        }, offset);
+        // setTimeout(function() {
+        texto = texto + ('El id del curso es ' + curso.id + ', el nombre del curso es ' + curso.nombre +
+            ',<br>' + 'tiene una duración de ' + curso.duracion + ' horas y ' +
+            '<br>' + 'un valor de ' + curso.valor + ' USD.<br><br>');
+        //  }, offset);
         offset += timmer;
     });
+    return texto;
 }
 
 let inscribirCurso = (idCurso, nombre, cedula) => {
     let curso = obtenerCurso(idCurso);
     if (curso == undefined) {
-        console.log('Ha ingresado un ID de curso que no existe.\n');
+        texto = 'Ha ingresado un ID de curso que no existe.<br>';
         listarCursos(0);
     } else {
-        let texto = 'El Estudiante ' + nombre + '.\n' +
-            'Con cedula ' + cedula + '.\n' +
+        texto = texto + 'El Estudiante ' + nombre + '.<br>' +
+            'Con cedula ' + cedula + '.<br>' +
             'Se ha matriculado en el curso con id igual a ' + curso.id + ', el nombre del curso es ' + curso.nombre +
-            ',\n' + 'tiene una duración de ' + curso.duracion + ' horas y ' +
-            '\n' + 'un valor de ' + curso.valor + ' USD.\n\n'
+            ',<br>' + 'tiene una duración de ' + curso.duracion + ' horas y ' +
+            '<br>' + 'un valor de ' + curso.valor + ' USD.<br><br>'
         fs.appendFile('matricula.txt', texto, (err) => {
             if (err) throw (err);
-            console.log('Inscrito correctamente');
+            texto = texto + 'Inscrito correctamente';
         });
     }
+    return texto;
 }
 
 
