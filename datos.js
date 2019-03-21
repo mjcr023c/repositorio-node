@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 let cursos = [{
         id: 1,
         nombre: 'Diseño de Bases de Datos',
@@ -63,10 +61,6 @@ let inscribirCurso = (idCurso, nombre, cedula) => {
             'Se ha matriculado en el curso con id igual a ' + curso.id + ', el nombre del curso es ' + curso.nombre +
             ',<br>' + 'tiene una duración de ' + curso.duracion + ' horas y ' +
             '<br>' + 'un valor de ' + curso.valor + ' USD.<br><br>'
-        fs.appendFile('matricula.txt', texto, (err) => {
-            if (err) throw (err);
-            texto = texto + 'Inscrito correctamente';
-        });
     }
     return texto;
 }

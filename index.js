@@ -11,7 +11,6 @@ app.get('/', function(req, res) {
 })
 
 app.get('/inscribir/:i/:n/:c', function(req, res) {
-    console.log(req.params);
     let idCurso = req.params.i;
     let nombre = req.params.n;
     let cedula = req.params.c;
