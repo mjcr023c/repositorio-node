@@ -1,21 +1,21 @@
-const { cursos, listarCursos, opcionesInscripcion, inscribirCurso } = require('./datos');
-const express = require('express')
-const app = express()
+const { argv } = require('./yargs');
+const funciones = require('./funciones');
+
+let comando = argv._[0];
+
+switch (comando) {
+    case 'crear':
+        funciones.crear(argv);
+        break;
+    case 'mostrar':
+        funciones.mostrar();
+        break;
+    case 'mostrarest':
+        funciones.mostrarest(argv.nombre);
+        break;
+    default:
+        console.log('No ingreso un comando existente');
+        break;
 
 
-let output = '';
-
-app.get('/', function(req, res) {
-    output = listarCursos(2000);
-    res.send(output);
-})
-
-app.get('/inscribir/:i/:n/:c', function(req, res) {
-    let idCurso = req.params.i;
-    let nombre = req.params.n;
-    let cedula = req.params.c;
-    output = inscribirCurso(idCurso, nombre, cedula);
-    res.send(output);
-})
-
-app.listen(3000)
+}
