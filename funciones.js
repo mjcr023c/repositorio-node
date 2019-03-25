@@ -66,9 +66,69 @@ const mostrarest = (nombre) => {
     }
 }
 
+const mostrarmat = () => {
+    listar();
+    let ganan = listaEstudiantes.filter(mat => mat.matematicas >= 3);
+    if (ganan.length == 0) {
+        console.log('ningun estudiante va ganando');
+    } else {
+        ganan.forEach(estudiante => {
+            console.log(estudiante.nombre);
+            console.log('notas ');
+            console.log(' matematicas ' + estudiante.matematicas);
+        });
+    }
+}
+
+const mostrarpromedioalto = () => {
+    listar();
+    let ganan = listaEstudiantes.filter(mat => obtenerPromedio(mat.matematicas, mat.ingles, mat.programacion) >= 3);
+    if (ganan.length == 0) {
+        console.log('ningun estudiante tiene un promedio alto');
+    } else {
+        ganan.forEach(estudiante => {
+            console.log(estudiante.nombre);
+            console.log('notas ');
+            console.log(' matematicas ' + estudiante.matematicas);
+            console.log(' ingles ' + estudiante.ingles);
+            console.log(' programacion ' + estudiante.programacion + '.');
+            console.log(' promedio : ' + obtenerPromedio(estudiante.matematicas, estudiante.ingles, estudiante.programacion) + '\n');
+
+        });
+    }
+}
+
+let obtenerPromedio = (nota_uno, nota_dos, nota_tres) => ((nota_uno + nota_dos + nota_tres) / 3);
+
+const actualizar = (nombre, asignatura, calificacion) => {
+    listar();
+    let encontrado = listaEstudiantes.find(buscar => buscar.nombre == nombre);
+
+    if (!encontrado) {
+        console.log('Estudiante no existe');
+    } else {
+        encontrado[asignatura] = calificacion;
+        guardar();
+    }
+}
+
+const eliminar = (nombre) => {
+    listar();
+    let estudiantes = listaEstudiantes.filter(est => est.nombre != nombre);
+    if (estudiantes.length == listaEstudiantes.length) {
+        console.log('no existe estudiante con ese nombre');
+    } else {
+        listaEstudiantes = estudiantes;
+        guardar();
+    }
+}
 
 module.exports = {
     crear,
     mostrar,
-    mostrarest
+    mostrarest,
+    mostrarmat,
+    mostrarpromedioalto,
+    actualizar,
+    eliminar
 }
